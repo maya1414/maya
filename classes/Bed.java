@@ -1,22 +1,20 @@
 package classes;
 
-import java.awt.*;
-
 public class Bed {
 
     private double high;
     private int pillows;
-    private Color colorSheets;
+    private String colorSheets;
     private double price;
 
-    public Bed(double high, int pillows, Color color, double price) {
+    public Bed(double high, int pillows, String color, double price) {
         this.high = high;
         this.pillows = pillows;
         this.colorSheets = color;
         this.price = price;
     }
 
-    public Bed(Color color, double high) {
+    public Bed(String color, double high) {
         this.high = high;
         this.colorSheets = color;
         this.pillows = 1;
@@ -34,11 +32,11 @@ public class Bed {
         return high;
     }
 
-    public Color getColorSheets() {
+    public String getColorSheets() {
         return colorSheets;
     }
 
-    public void changeColorSheets(Color color) {
+    public void changeColorSheets(String color) {
         this.colorSheets = color;
     }
 }
