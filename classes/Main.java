@@ -5,6 +5,8 @@ public class Main {
 
         Bed bed = new Bed("gray", 200);
 
+        bed.changeColorSheets(MayaConstants.color);
+
         Shirt[] shirts = {
                 new Shirt(38, "white"),
                 new Shirt(36, "blue"),
