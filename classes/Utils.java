@@ -10,4 +10,9 @@ public class Utils {
         newArray[array.length] = newItem;
         return newArray;
     }
+
+    public static boolean isClose(double value, double target, double tolerance) {
+        return Math.abs(value - target) <= tolerance;
+    }
+
 }

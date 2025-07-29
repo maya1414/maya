@@ -3,7 +3,7 @@ package classes;
 public class Main {
     public static void main(String[] args) {
 
-        Bed bed = new Bed("gray", 200);
+        Bed bed = new Bed(200.0, 4, "gray", 20000);
 
         bed.changeColorSheets(MayaConstants.color);
 
@@ -23,6 +23,8 @@ public class Main {
         for (int i = 0; i < closet.getShirtsBySize(MayaConstants.size).length; i++) {
             System.out.print(closet.getShirtsBySize(MayaConstants.size)[i].colorOfShirt + " ");
         }
+        System.out.println();
+        System.out.println(Utils.isClose(bed.getPrice(), MayaConstants.maxPriceForBed, MayaConstants.tolerance));
 
     }
 }
