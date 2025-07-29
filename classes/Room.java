@@ -10,6 +10,11 @@ public class Room {
         this.bed = bed;
     }
 
+    public Room(Bed bed, Shirt[] shirts) {
+        this.bed = bed;
+        this.closet = new Closet(shirts);
+    }
+
     public Bed getBed() {
         return bed;
     }
