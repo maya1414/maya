@@ -29,4 +29,9 @@ public class Closet {
         }
         return shirtsBySize;
     }
+
+    public void addShirt(Shirt newShirt){
+        this.shirts = ClosetUtils.addToArray(shirts , newShirt);
+    }
+
 }
