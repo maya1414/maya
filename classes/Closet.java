@@ -31,7 +31,7 @@ public class Closet {
     }
 
     public void addShirt(Shirt newShirt){
-        this.shirts = ClosetUtils.addToArray(shirts , newShirt);
+        this.shirts = Utils.addToArray(shirts , newShirt);
     }
 
 }

@@ -1,6 +1,6 @@
 package classes;
 
-public class ClosetUtils {
+public class Utils {
 
     protected static Shirt[] addToArray(Shirt[] array, Shirt newItem) {
         Shirt[] newArray = new Shirt[array.length + 1];
