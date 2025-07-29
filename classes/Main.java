@@ -18,5 +18,11 @@ public class Main {
 
         Room room = new Room(bed, shirts);
 
+        Closet closet = new Closet(shirts);
+
+        for (int i = 0; i < closet.getShirtsBySize(MayaConstants.size).length; i++) {
+            System.out.print(closet.getShirtsBySize(MayaConstants.size)[i].colorOfShirt + " ");
+        }
+
     }
 }
