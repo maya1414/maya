@@ -49,6 +49,24 @@ public abstract class Fish {
         }
     }
 
+    public static void makeArrayOfFishWhoBasketballPlayer(Fish[] fishArr){
+        int count = 0;
+        for (Fish fish : fishArr) {
+            if (fish instanceof ProfessionalBasketBallPlayer){
+                count++;
+            }
+        }
+        ProfessionalBasketBallPlayer[] professionalBasketBallPlayerFish =new ProfessionalBasketBallPlayer[count];
+        int index = 0;
+        for (Fish fish : fishArr) {
+            if (fish instanceof ProfessionalBasketBallPlayer player){
+                professionalBasketBallPlayerFish[index] = player;
+                index++;
+            }
+        }
+        IsbasketBallPlayerFish(professionalBasketBallPlayerFish);
+    }
+
     public abstract void goToWork();
 
 }
