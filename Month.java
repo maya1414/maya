@@ -18,7 +18,7 @@ public enum Month {
         this.days = days;
     }
 
-    public int returnNumOfDays(Month month) {
+    public static int returnNumOfDays(Month month) {
         return month.days;
     }
 
