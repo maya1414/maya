@@ -17,4 +17,9 @@ public enum Month {
     Month(int days) {
         this.days = days;
     }
+
+    public int returnNumOfDays(Month month) {
+        return month.days;
+    }
+
 }
