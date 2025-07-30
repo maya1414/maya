@@ -36,4 +36,6 @@ public abstract class Fish {
         System.out.println("walkByFoot");
     }
 
+    public abstract void goToWork();
+
 }
