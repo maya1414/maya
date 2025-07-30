@@ -1,4 +1,6 @@
-public class SpongeBob extends Fish implements ProfessionalBasketBallPlayer{
+package polymorphism;
+
+public class SpongeBob extends Fish implements ProfessionalBasketBallPlayer {
 
 
     public SpongeBob(String name, String favoriteFood, int age) {
