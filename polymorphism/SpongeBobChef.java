@@ -6,4 +6,9 @@ public class SpongeBobChef extends SpongeBob {
         super(name, favoriteFood, age);
     }
 
+    @Override
+    public void playBasketBall() {
+        System.out.println("playing basketball");
+    }
+
 }
