@@ -7,4 +7,19 @@ public class exceptions {
         throw runtimeException;
     }
 
+    static void error(){
+        try {
+            String array[] = {"a" ,"b", "c"};
+            System.out.println(array[10]);
+        }
+        catch (RuntimeException e){
+            System.out.println("an error occurred");
+        }
+    }
+
+
+
+
+
+
 }
