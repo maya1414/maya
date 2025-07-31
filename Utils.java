@@ -10,4 +10,15 @@ public class Utils {
         return totalDays + (dayInMonth - 1);
     }
 
+    public Month whatMonthIsIt(int days) {
+        int dayTotal =0;
+        for (Month month : Month.values()) {
+            dayTotal += month.days;
+            if (days<= dayTotal) {
+                return month;
+            }
+        }
+        return null;
+    }
+
 }
