@@ -48,4 +48,16 @@ public class exceptions {
         }
     }
 
+    static void catchExceptionAndPrintNum(int num){
+        try {
+            numbersBetweenOneAndThreeOrNothing(num);
+        } catch (AuthenticationException e) {
+            throw new RuntimeException("3");
+        } catch (FileNotFoundException e) {
+            throw new RuntimeException("2");
+        } catch (BindException e) {
+            throw new RuntimeException("1");
+        }
+    }
+
 }
