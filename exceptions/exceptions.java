@@ -1,5 +1,8 @@
 package exceptions;
 
+import javax.naming.AuthenticationException;
+import java.io.FileNotFoundException;
+import java.net.BindException;
 import java.util.Scanner;
 
 public class exceptions {
@@ -21,7 +24,7 @@ public class exceptions {
         }
     }
 
-    public static void checkNumbers() {
+     static void checkNumbers() {
         Scanner scanner = new Scanner(System.in);
         int num = scanner.nextInt();
         if (num ==45) {
@@ -32,6 +35,16 @@ public class exceptions {
             }
         } else if (num == 100) {
             throw new RuntimeException("KABOOM!!");
+        }
+    }
+
+    static void numbersBetweenOneAndThreeOrNothing(int num) throws FileNotFoundException, BindException, AuthenticationException{
+        if (num ==1){
+            throw new  FileNotFoundException();
+        } else if (num == 2){
+            throw new BindException();
+        } else if (num == 3){
+            throw new AuthenticationException();
         }
     }
 
