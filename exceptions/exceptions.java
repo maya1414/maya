@@ -1,3 +1,7 @@
+package exceptions;
+
+import java.util.Scanner;
+
 public class exceptions {
 
     static void makeExceptions(){
@@ -17,9 +21,18 @@ public class exceptions {
         }
     }
 
-
-
-
-
+    public static void checkNumbers() {
+        Scanner scanner = new Scanner(System.in);
+        int num = scanner.nextInt();
+        if (num ==45) {
+            try {
+                throw new IllegalArgumentException();
+            } catch (IllegalArgumentException e) {
+                System.out.println("caught " + e.getMessage());
+            }
+        } else if (num == 100) {
+            throw new RuntimeException("KABOOM!!");
+        }
+    }
 
 }
