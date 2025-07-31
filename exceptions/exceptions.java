@@ -51,13 +51,12 @@ public class exceptions {
     static void catchExceptionAndPrintNum(int num){
         try {
             numbersBetweenOneAndThreeOrNothing(num);
-        } catch (AuthenticationException e) {
-            throw new RuntimeException("3");
         } catch (FileNotFoundException e) {
-            throw new RuntimeException("2");
+            System.out.println(1);
         } catch (BindException e) {
-            throw new RuntimeException("1");
-        }
+            System.out.println(2);
+        } catch (AuthenticationException e) {
+            System.out.println(3);        }
     }
 
 }
