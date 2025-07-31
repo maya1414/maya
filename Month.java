@@ -18,8 +18,8 @@ public enum Month {
         this.days = days;
     }
 
-    public static int returnNumOfDays(Month month) {
-        return month.days;
+    public static int returnNumOfMonth(Month month) {
+        return month.ordinal();
     }
 
 }
