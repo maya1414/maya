@@ -19,7 +19,7 @@ public enum Month {
     }
 
     public static int returnNumOfMonth(Month month) {
-        return month.ordinal();
+        return month.ordinal()+1;
     }
 
 }
