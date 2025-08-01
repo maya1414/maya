@@ -1,0 +1,22 @@
+1.  2
+    5
+
+2.  5
+
+3.  כתובת
+    כתובת
+    name: Raz ,age: 9
+    name: Raz ,age: 9
+
+4.  name: Dan ,age: 16
+    name: Dan ,age: 16
+
+
+5.  In heap before GC:  Dan, 16
+                        Ben, 17
+
+    In heap after GC:   Dan, 16
+
+
+6.Every time the update function runs, a new DoubleTimedValue object is created. This takes more and more space in the heap and makes the garbage collector work harder, which slows the code.
+ To fix this, we can change DoubleTimedValue from a record to a regular class, so we can update its values without creating a new object each time. Then, we can create the object once (in the constructor), and in the update method we just change its values using set() method.
