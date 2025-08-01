@@ -2,11 +2,11 @@ package classes;
 
 public class Shirt {
 
-    public int sizeOfShirt;
-    public String colorOfShirt;
+    public final int size;
+    public final String color;
 
     public Shirt(int sizeOfShirt, String colorOfShirt) {
-        this.colorOfShirt = colorOfShirt;
-        this.sizeOfShirt = sizeOfShirt;
+        this.color = colorOfShirt;
+        this.size = sizeOfShirt;
     }
 }

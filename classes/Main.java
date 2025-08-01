@@ -5,7 +5,7 @@ public class Main {
 
         Bed bed = new Bed(200.0, 4, "gray", 20000);
 
-        bed.changeColorSheets(MayaConstants.color);
+        bed.changeSheetsColor(MayaConstants.FAVORITE_COLOR);
 
         Shirt[] shirts = {
                 new Shirt(38, "white"),
@@ -20,11 +20,11 @@ public class Main {
 
         Closet closet = new Closet(shirts);
 
-        for (int i = 0; i < closet.getShirtsBySize(MayaConstants.size).length; i++) {
-            System.out.print(closet.getShirtsBySize(MayaConstants.size)[i].colorOfShirt + " ");
+        for (int i = 0; i < closet.getShirtsBySize(MayaConstants.SHIRT_EU_SIZE).length; i++) {
+            System.out.print(closet.getShirtsBySize(MayaConstants.SHIRT_EU_SIZE)[i].color + " ");
         }
         System.out.println();
-        System.out.println(Utils.isClose(bed.getPrice(), MayaConstants.maxPriceForBed, MayaConstants.tolerance));
+        System.out.println(Utils.isNear(bed.getPrice(), MayaConstants.MAX_PRICE_FOR_BED, MayaConstants.TOLERANCE));
 
     }
 }

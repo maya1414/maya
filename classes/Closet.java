@@ -12,17 +12,22 @@ public class Closet {
         return shirts;
     }
 
-    public Shirt[] getShirtsBySize(int size) {
-        int count = 0;
+    public int countShirtsBySize(int size) {
+        int matchingSizeCount = 0;
         for (int i = 0; i < shirts.length; i++) {
-            if (shirts[i].sizeOfShirt == size) {
-                count++;
+            if (shirts[i].size == size) {
+                matchingSizeCount++;
             }
         }
-        Shirt[] shirtsBySize = new Shirt[count];
+        return matchingSizeCount;
+    }
+
+    public Shirt[] getShirtsBySize(int size) {
+        int matchingSizeCount = countShirtsBySize(size);
+        Shirt[] shirtsBySize = new Shirt[matchingSizeCount];
         int index = 0;
         for (int i = 0; i < shirts.length; i++) {
-            if (shirts[i].sizeOfShirt == size) {
+            if (shirts[i].size == size) {
                 shirtsBySize[index] = shirts[i];
                 index++;
             }
@@ -30,8 +35,8 @@ public class Closet {
         return shirtsBySize;
     }
 
-    public void addShirt(Shirt newShirt){
-        this.shirts = Utils.addToArray(shirts , newShirt);
+    public void addShirt(Shirt newShirt) {
+        this.shirts = Utils.addToArray(shirts, newShirt);
     }
 
 }

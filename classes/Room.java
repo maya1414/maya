@@ -2,8 +2,8 @@ package classes;
 
 public class Room {
 
-    private Closet closet;
-    private Bed bed;
+    private final Closet closet;
+    private final Bed bed;
 
     public Room(Closet closet, Bed bed) {
         this.closet = closet;

@@ -2,22 +2,20 @@ package classes;
 
 public class Bed {
 
-    private double high;
+    private double hight;
     private int pillows;
-    private String colorSheets;
+    private String sheetsColor;
     private double price;
 
-    public Bed(double high, int pillows, String color, double price) {
-        this.high = high;
+    public Bed(double hight, int pillows, String sheetsColor, double price) {
+        this.hight = hight;
         this.pillows = pillows;
-        this.colorSheets = color;
+        this.sheetsColor = sheetsColor;
         this.price = price;
     }
 
-    public Bed(String color, double high) {
-        this.high = high;
-        this.colorSheets = color;
-        this.pillows = 1;
+    public Bed(String sheetsColor, double hight) {
+        this(hight, MayaConstants.NUM_OF_PILLOWS, sheetsColor, MayaConstants.DEFAULT_BED_PRICE);
     }
 
     public double getPrice() {
@@ -29,14 +27,14 @@ public class Bed {
     }
 
     public double getHigh() {
-        return high;
+        return hight;
     }
 
-    public String getColorSheets() {
-        return colorSheets;
+    public String getSheetsColor() {
+        return sheetsColor;
     }
 
-    public void changeColorSheets(String color) {
-        this.colorSheets = color;
+    public void changeSheetsColor(String color) {
+        this.sheetsColor= color;
     }
 }
