@@ -1,4 +1,0 @@
-7. If the name is too short (less than 4 letters), the variable name does not get a value and stays null. when the program tries to print the name in uppercase, it fails because you can’t do that on something that is null. This causes a NullPointerException error.
-To fix this, you can put the call to printNameUpperCase inside a try and catch block. If an error happens, instead of the program crashing, you can throw a different error like an IllegalArgumentException with a clear message that says the name must be longer. This makes the code easier to understand and helps people know what went wrong.
-
-8.
