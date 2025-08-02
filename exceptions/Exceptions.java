@@ -5,16 +5,16 @@ import java.io.FileNotFoundException;
 import java.net.BindException;
 import java.util.Scanner;
 
-public class exceptions {
+public class Exceptions {
 
-    static void makeExceptions() {
+    public static void makeExceptions() {
         RuntimeException runtimeException = new RuntimeException("bla bla");
         IndexOutOfBoundsException indexOutOfBoundsException = new IndexOutOfBoundsException("bla bla2");
         System.out.println(indexOutOfBoundsException.getStackTrace());
         throw runtimeException;
     }
 
-    static void error() {
+    public static void error() {
         try {
             String array[] = {"a", "b", "c"};
             System.out.println(array[10]);
@@ -23,21 +23,23 @@ public class exceptions {
         }
     }
 
-    static void checkNumbers() {
+    public static void checkNumbers() {
         Scanner scanner = new Scanner(System.in);
         int num = scanner.nextInt();
-        if (num == 45) {
-            try {
-                throw new IllegalArgumentException();
-            } catch (IllegalArgumentException e) {
-                System.out.println("caught " + e.getMessage());
-            }
-        } else if (num == 100) {
-            throw new RuntimeException("KABOOM!!");
+        while (num != 100){
+          if (num == 45) {
+               try {
+                   throw new IllegalArgumentException();
+               } catch (IllegalArgumentException e) {
+                  System.out.println("caught " + e);
+              }
+          }
+          num = scanner.nextInt();
         }
+        throw new RuntimeException("KABOOM!!");
     }
 
-    static void numbersBetweenOneAndThreeOrNothing(int num) throws FileNotFoundException, BindException, AuthenticationException {
+    public static void numbersBetweenOneAndThreeOrNothing(int num) throws FileNotFoundException, BindException, AuthenticationException {
         if (num == 1) {
             throw new FileNotFoundException();
         } else if (num == 2) {
@@ -47,7 +49,7 @@ public class exceptions {
         }
     }
 
-    static void catchExceptionAndPrintNum(int num) {
+    public static void catchExceptionAndPrintNum(int num) {
         try {
             numbersBetweenOneAndThreeOrNothing(num);
         } catch (FileNotFoundException e) {
@@ -59,7 +61,7 @@ public class exceptions {
         }
     }
 
-    static void catchExceptionAndPrintNum2(int num) throws FileNotFoundException, AuthenticationException, BindException {
+    public static void catchExceptionAndPrintNum2(int num) throws FileNotFoundException, AuthenticationException, BindException {
         try {
             numbersBetweenOneAndThreeOrNothing(num);
             throw new RuntimeException();
