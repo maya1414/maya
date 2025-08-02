@@ -20,7 +20,7 @@ public enum Month {
         this.days = days;
     }
 
-    public static int returnNumOfMonth(Month month) {
+    public int returnNumOfMonth(Month month) {
         return month.ordinal()+1;
     }
 
