@@ -2,11 +2,11 @@ package polymorphism;
 
 public abstract class Fish {
 
-    int age;
+    private final int age;
 
-    String name;
+    private final String name;
 
-    String favoriteFood;
+    private final String favoriteFood;
 
     public Fish(String name, String favoriteFood, int age) {
         this.age = age;
@@ -42,29 +42,9 @@ public abstract class Fish {
         for (ProfessionalBasketBallPlayer player : players) {
             if (player instanceof Fish fish) {
                 fish.goToWork();
-                player.playBasketBall();
-            } else {
-                player.playBasketBall();
             }
+            player.playBasketBall();
         }
-    }
-
-    public static void makeArrayOfFishWhoBasketballPlayer(Fish[] fishArr){
-        int count = 0;
-        for (Fish fish : fishArr) {
-            if (fish instanceof ProfessionalBasketBallPlayer){
-                count++;
-            }
-        }
-        ProfessionalBasketBallPlayer[] professionalBasketBallPlayerFish =new ProfessionalBasketBallPlayer[count];
-        int index = 0;
-        for (Fish fish : fishArr) {
-            if (fish instanceof ProfessionalBasketBallPlayer player){
-                professionalBasketBallPlayerFish[index] = player;
-                index++;
-            }
-        }
-        IsbasketBallPlayerFish(professionalBasketBallPlayerFish);
     }
 
     public abstract void goToWork();
