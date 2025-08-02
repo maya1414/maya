@@ -3,12 +3,12 @@ package record;
 public class Utils {
 
     public static void myInfo() {
-        Student me = new Student("Maya", Constants.TENTH_GRADE, Constants.CLASS_NUMBER_ELEVEN);
+        Student me = new Student("Maya", Constants.FIRST_GRADE_OF_HIGH_SCHOOL, Constants.MY_CLASS_NUMBER);
         System.out.println(me.getInfo());
         System.out.println("in high school? " + me.isInHighSchool());
     }
 
-    public static int findClassIndex(Classroom[] classrooms, int classCount, Student student) {
+    public static int findStudentClassIndex(Classroom[] classrooms, int classCount, Student student) {
         for (int i = 0; i < classCount; i++) {
             if (classrooms[i].grade() == student.grade() &&
                     classrooms[i].classNum() == student.classNumber()) {
@@ -18,32 +18,31 @@ public class Utils {
         return Constants.NOT_FOUND;
     }
 
-    public static void addStudentToClassroom(Classroom[] classrooms, int classroomIndex, Student student) {
-        Student[] oldGroup = classrooms[classroomIndex].students();
+    public static Classroom addStudentToClassroom(Classroom classroom, Student student) {
+        Student[] oldGroup = classroom.students();
         Student[] newGroup = new Student[oldGroup.length + 1];
         for (int k = 0; k < oldGroup.length; k++) {
             newGroup[k] = oldGroup[k];
         }
         newGroup[oldGroup.length] = student;
-        classrooms[classroomIndex] = new Classroom(classrooms[classroomIndex].grade(), classrooms[classroomIndex].classNum(), newGroup);
+        return new Classroom(classroom.grade(), classroom.classNum(), newGroup);
     }
 
-    public static void createNewClassroom(Classroom[] classrooms, int classCount, Student student) {
-        Student[] group = new Student[1];
-        group[0] = student;
-        classrooms[classCount] = new Classroom(student.grade(), student.classNumber(), group);
+    public static Classroom createNewClassroom(Student student) {
+        Student[] group = new Student[]{student};
+        return new Classroom(student.grade(), student.classNumber(), group);
     }
 
     public static Classroom[] sorting(Student[] students) {
         Classroom[] classrooms = new Classroom[students.length];
         int classCount = 0;
         for (Student student : students) {
-            int classroomIndex = findClassIndex(classrooms, classCount, student);
+            int classroomIndex = findStudentClassIndex(classrooms, classCount, student);
             if (classroomIndex == Constants.NOT_FOUND) {
-                createNewClassroom(classrooms, classCount, student);
+                classrooms[classCount] = createNewClassroom(student);
                 classCount++;
             } else {
-                addStudentToClassroom(classrooms, classroomIndex, student);
+                classrooms[classroomIndex] = addStudentToClassroom(classrooms[classroomIndex], student);
             }
         }
         Classroom[] result = new Classroom[classCount];
