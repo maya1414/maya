@@ -3,7 +3,7 @@ package record;
 public record Student(String name, int grade, int classNumber) {
 
     public Student(String name, int classNumber) {
-        this(name, Constants.LAST_GRADE_OF_MID_SCHOOL, classNumber);
+        this(name, Constants.DEFAULT_GRADE, classNumber);
     }
 
     public String getInfo() {

@@ -15,7 +15,7 @@ public class Utils {
                 return i;
             }
         }
-        return Constants.DEFAULT_INDEX;
+        return Constants.NOT_FOUND;
     }
 
     public static Classroom addStudentToClassroom(Classroom classroom, Student student) {
@@ -38,7 +38,7 @@ public class Utils {
         int classCount = 0;
         for (Student student : students) {
             int classroomIndex = findStudentClassIndex(classrooms, classCount, student);
-            if (classroomIndex == Constants.DEFAULT_INDEX) {
+            if (classroomIndex == Constants.NOT_FOUND) {
                 classrooms[classCount] = createNewClassroom(student);
                 classCount++;
             } else {
