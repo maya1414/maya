@@ -7,27 +7,26 @@ import java.util.Scanner;
 
 public class exceptions {
 
-    static void makeExceptions(){
+    static void makeExceptions() {
         RuntimeException runtimeException = new RuntimeException("bla bla");
-        IndexOutOfBoundsException indexOutOfBoundsException =  new IndexOutOfBoundsException("bla bla2");
+        IndexOutOfBoundsException indexOutOfBoundsException = new IndexOutOfBoundsException("bla bla2");
         System.out.println(indexOutOfBoundsException.getStackTrace());
         throw runtimeException;
     }
 
-    static void error(){
+    static void error() {
         try {
-            String array[] = {"a" ,"b", "c"};
+            String array[] = {"a", "b", "c"};
             System.out.println(array[10]);
-        }
-        catch (RuntimeException e){
+        } catch (RuntimeException e) {
             System.out.println("an error occurred");
         }
     }
 
-     static void checkNumbers() {
+    static void checkNumbers() {
         Scanner scanner = new Scanner(System.in);
         int num = scanner.nextInt();
-        if (num ==45) {
+        if (num == 45) {
             try {
                 throw new IllegalArgumentException();
             } catch (IllegalArgumentException e) {
@@ -38,17 +37,17 @@ public class exceptions {
         }
     }
 
-    static void numbersBetweenOneAndThreeOrNothing(int num) throws FileNotFoundException, BindException, AuthenticationException{
-        if (num ==1){
-            throw new  FileNotFoundException();
-        } else if (num == 2){
+    static void numbersBetweenOneAndThreeOrNothing(int num) throws FileNotFoundException, BindException, AuthenticationException {
+        if (num == 1) {
+            throw new FileNotFoundException();
+        } else if (num == 2) {
             throw new BindException();
-        } else if (num == 3){
+        } else if (num == 3) {
             throw new AuthenticationException();
         }
     }
 
-    static void catchExceptionAndPrintNum(int num){
+    static void catchExceptionAndPrintNum(int num) {
         try {
             numbersBetweenOneAndThreeOrNothing(num);
         } catch (FileNotFoundException e) {
@@ -73,7 +72,7 @@ public class exceptions {
         } catch (AuthenticationException e) {
             System.out.println(3);
             throw e;
-        }finally {
+        } finally {
             System.out.println("here");
         }
     }
