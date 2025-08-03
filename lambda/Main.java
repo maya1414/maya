@@ -1,8 +1,11 @@
 package lambda;
 
 public class Main {
+
     public static void main(String[] args) {
         Func func = (x, y) -> countCharInString(x, y);
+
+        Func2 func2 = (x, y) -> (int) Math.pow(Math.min(x,y), Math.max(x,y));
 
     }
 
@@ -16,4 +19,5 @@ public class Main {
         }
         return count;
     }
+
 }
