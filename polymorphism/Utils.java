@@ -2,6 +2,15 @@ package polymorphism;
 
 public class Utils {
 
+    public static void isbasketBallPlayerFish(ProfessionalBasketBallPlayer[] players) {
+        for (ProfessionalBasketBallPlayer player : players) {
+            if (player instanceof Fish fish) {
+                fish.goToWork();
+            }
+            player.playBasketBall();
+        }
+    }
+
     public static void makeArrayOfFishWhoBasketballPlayer(Fish[] fishArr){
         int count = 0;
         for (Fish fish : fishArr) {
@@ -17,7 +26,7 @@ public class Utils {
                 index++;
             }
         }
-        Fish.IsbasketBallPlayerFish(professionalBasketBallPlayerFish);
+        isbasketBallPlayerFish(professionalBasketBallPlayerFish);
     }
 
 }

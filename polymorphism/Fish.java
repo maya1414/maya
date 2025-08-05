@@ -38,15 +38,6 @@ public abstract class Fish {
         System.out.println("walkByFoot");
     }
 
-    public static void IsbasketBallPlayerFish(ProfessionalBasketBallPlayer[] players) {
-        for (ProfessionalBasketBallPlayer player : players) {
-            if (player instanceof Fish fish) {
-                fish.goToWork();
-            }
-            player.playBasketBall();
-        }
-    }
-
     public abstract void goToWork();
 
 }
