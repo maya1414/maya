@@ -1,15 +1,13 @@
 package generics;
 
 import java.util.ArrayList;
-import java.util.List;
 
-public class Arr<T> {
+public class Arr {
 
-    public void printItems(ArrayList<T> arr){
-        for (T item : arr){
+    public void printItems(ArrayList arr){
+        for (Object item : arr){
             System.out.println(item);
         }
     }
-
 
 }
