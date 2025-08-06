@@ -7,9 +7,8 @@ public enum item {
     WATER("water", 3),
     OIL("oil", 10),
     SUGAR("sugar", 7),
-    APPLES("apples", 0);
+    APPLES("apples", Constants.PRICE_BY_WEIGHT);
 
-    private static final int PRICE_BY_WEIGHT = 0;
 
     public final String name;
     public final int price;
@@ -31,7 +30,7 @@ public enum item {
         Scanner reader = new Scanner(System.in);
         int sum = 0;
         for (int i = 0; i < items.length; i++) {
-            if (items[i].getPrice() == PRICE_BY_WEIGHT){
+            if (items[i].getPrice() == Constants.PRICE_BY_WEIGHT){
                 System.out.println("Enetr the price of apples: ");
                 int priceOfApple = reader.nextInt();
                 sum+= priceOfApple * quantity[i];
