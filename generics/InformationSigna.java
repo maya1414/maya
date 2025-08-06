@@ -4,8 +4,8 @@ public interface InformationSigna<T> {
 
     T getTheLatestValue();
 
-    void update();
+    void update(T item);
 
-    T asArray();
+    T[] asArray();
 
 }
