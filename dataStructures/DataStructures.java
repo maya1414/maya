@@ -51,4 +51,11 @@ public class DataStructures {
         }
     }
 
+    public static void main(String[] args) {
+        Map<Character, Integer> originalAlphabetMap = createAlphabetMap();
+        SimpleMap<Character, Integer> simpleAlphabetMap = new SimpleMap<>();
+        originalAlphabetMap.forEach((key, value) -> simpleAlphabetMap.put(key, value));
+        System.out.println(simpleAlphabetMap.getInOrder());
+    }
+
 }
