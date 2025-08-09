@@ -1,4 +1,8 @@
+package dataStructures;
+
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Scanner;
 
 public class datastructures {
@@ -26,5 +30,14 @@ public class datastructures {
         }
         System.out.println(numberWasEntered);
         System.out.println(arr);
+    }
+
+    public static Map<Character, Integer> createAlphabetMap(){
+        Map<Character, Integer> map = new HashMap<>();
+        String alphabet = "abcdefghijklmnopqrstuvwxyz";
+        for (int i = 0; i < alphabet.length(); i++) {
+            map.put(alphabet.charAt(i), i + 1);
+        }
+        return map;
     }
 }
