@@ -5,7 +5,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
 
-public class datastructures {
+public class DataStructures {
     public static void sortingNumbers() {
         Scanner input = new Scanner(System.in);
         System.out.println("Enter");
