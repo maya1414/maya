@@ -10,4 +10,5 @@ public class Utils {
 
     PrintInt printInt = (intToInt ) -> System.out.println(intToInt);
 
+    PrintFive printFive = () -> System.out.println(5);
 }
