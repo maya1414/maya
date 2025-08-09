@@ -1,9 +1,6 @@
 package dataStructures;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Scanner;
+import java.util.*;
 
 public class DataStructures {
     public static void sortingNumbers() {
@@ -39,5 +36,18 @@ public class DataStructures {
             map.put(alphabet.charAt(i), i + 1);
         }
         return map;
+    }
+
+    public static void sorting(List<Integer> numbers) {
+        for (int i = 1; i < numbers.size(); i++) {
+            int currentValue = numbers.get(i);
+            int sortedIndex = i -1;
+
+            while (sortedIndex >= 0 && numbers.get(sortedIndex) > currentValue) {
+                numbers.set(sortedIndex + 1, numbers.get(sortedIndex));
+                sortedIndex--;
+            }
+            numbers.set(sortedIndex + 1, currentValue);
+        }
     }
 }
