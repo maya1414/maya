@@ -6,10 +6,11 @@ public class datastructures {
         Scanner input = new Scanner(System.in);
         System.out.println("Enter");
         String num = input.next();
+        boolean numberWasEntered = false;
         ArrayList<Number> arr = new ArrayList<>();
         ArrayList<Number> arr2 = new ArrayList<>();
         while (!num.equals("q")) {
-            double number = Double.parseDouble(num);
+            int number = Integer.parseInt(num);
             if (number % 10 == 0) {
                 arr.add(number);
             }
@@ -17,8 +18,7 @@ public class datastructures {
             num = input.next();
         }
         System.out.print("Enter number to check ");
-        Number check = Double.parseDouble(input.next());
-        boolean numberWasEntered = false;
+        Number check = Integer.parseInt(input.next());
         for (Number number : arr2) {
             if (number.equals(check)) {
                 numberWasEntered = true;
