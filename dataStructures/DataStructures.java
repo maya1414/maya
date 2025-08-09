@@ -3,6 +3,7 @@ package dataStructures;
 import java.util.*;
 
 public class DataStructures {
+
     public static void sortingNumbers() {
         Scanner input = new Scanner(System.in);
         System.out.println("Enter");
@@ -29,7 +30,7 @@ public class DataStructures {
         System.out.println(arr);
     }
 
-    public static Map<Character, Integer> createAlphabetMap(){
+    public static Map<Character, Integer> createAlphabetMap() {
         Map<Character, Integer> map = new HashMap<>();
         String alphabet = "abcdefghijklmnopqrstuvwxyz";
         for (int i = 0; i < alphabet.length(); i++) {
@@ -41,8 +42,7 @@ public class DataStructures {
     public static void sorting(List<Integer> numbers) {
         for (int i = 1; i < numbers.size(); i++) {
             int currentValue = numbers.get(i);
-            int sortedIndex = i -1;
-
+            int sortedIndex = i - 1;
             while (sortedIndex >= 0 && numbers.get(sortedIndex) > currentValue) {
                 numbers.set(sortedIndex + 1, numbers.get(sortedIndex));
                 sortedIndex--;
@@ -50,4 +50,5 @@ public class DataStructures {
             numbers.set(sortedIndex + 1, currentValue);
         }
     }
+
 }

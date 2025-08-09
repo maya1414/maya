@@ -1,3 +1,4 @@
 package dataStructures;
 
-public record Observation(float x, float y, float z) {}
+public record Observation(float x, float y, float z) {
+}
