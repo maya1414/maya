@@ -4,8 +4,8 @@ import java.util.ArrayList;
 
 public class Arr {
 
-    public void printItems(ArrayList arr){
-        for (Object item : arr){
+    public <T> void printItems(ArrayList<T> arr){
+        for (T item : arr){
             System.out.println(item);
         }
     }
