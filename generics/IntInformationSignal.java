@@ -12,11 +12,11 @@ public class IntInformationSignal implements InformationSigna<Integer> {
 
     @Override
     public Integer getTheLatestValue() {
-        if (intArr.get(intArr.size()-1) == null) {
+        if (intArr.getLast() == null) {
             System.out.println("This arr is empty");
             return null;
         }
-        return intArr.get(intArr.size() - 1);
+        return intArr.getLast();
     }
 
     @Override
