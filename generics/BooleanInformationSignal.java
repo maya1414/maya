@@ -12,12 +12,11 @@ public class BooleanInformationSignal implements InformationSigna<Boolean> {
 
     @Override
     public Boolean getTheLatestValue() {
-        try {
-            return booleanArr.get(booleanArr.size() - 1);
-        } catch (Exception e) {
+        if (booleanArr.get(booleanArr.size()-1) == null) {
             System.out.println("This arr is empty");
+            return null;
         }
-        return null;
+        return booleanArr.get(booleanArr.size() - 1);
     }
 
     @Override
@@ -27,6 +26,6 @@ public class BooleanInformationSignal implements InformationSigna<Boolean> {
 
     @Override
     public Boolean[] asArray() {
-        return (Boolean[]) booleanArr.toArray();
+        return booleanArr.toArray(new Boolean[0]);
     }
 }
