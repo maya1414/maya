@@ -8,9 +8,8 @@ public class DataStructures {
         Scanner input = new Scanner(System.in);
         System.out.println("Enter");
         String num = input.next();
-        boolean numberWasEntered = false;
         ArrayList<Number> arr = new ArrayList<>();
-        ArrayList<Number> arr2 = new ArrayList<>();
+        HashSet<Number> arr2 = new HashSet<>();
         while (!num.equals("q")) {
             int number = Integer.parseInt(num);
             if (number % 10 == 0) {
@@ -21,12 +20,7 @@ public class DataStructures {
         }
         System.out.print("Enter number to check ");
         Number check = Integer.parseInt(input.next());
-        for (Number number : arr2) {
-            if (number.equals(check)) {
-                numberWasEntered = true;
-            }
-        }
-        System.out.println(numberWasEntered);
+        System.out.println(arr2.contains(check));
         System.out.println(arr);
     }
 
@@ -41,17 +35,27 @@ public class DataStructures {
 
     public static void sorting(List<Integer> numbers) {
         for (int i = 1; i < numbers.size(); i++) {
-            int currentValue = numbers.get(i);
+            int toInsert = numbers.get(i);
             int sortedIndex = i - 1;
-            while (sortedIndex >= 0 && numbers.get(sortedIndex) > currentValue) {
+            while (sortedIndex >= 0 && numbers.get(sortedIndex) > toInsert) {
                 numbers.set(sortedIndex + 1, numbers.get(sortedIndex));
                 sortedIndex--;
             }
-            numbers.set(sortedIndex + 1, currentValue);
+            numbers.set(sortedIndex + 1, toInsert);
         }
+        System.out.println(numbers);
     }
 
     public static void main(String[] args) {
+        List<Integer> list = new ArrayList<>();
+        list.add(5);
+        list.add(2);
+        list.add(9);
+        list.add(1);
+        list.add(7);
+        System.out.println(list);
+        sorting(list);
+
         Map<Character, Integer> originalAlphabetMap = createAlphabetMap();
         SimpleMap<Character, Integer> simpleAlphabetMap = new SimpleMap<>();
         originalAlphabetMap.forEach((key, value) -> simpleAlphabetMap.put(key, value));

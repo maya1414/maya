@@ -1,18 +1,19 @@
 package dataStructures;
 
 import java.util.ArrayList;
+import java.util.List;
 
 
 public class MultiVisionSources {
 
 
-    private final ArrayList<Observation> observations;
+    private final List<Observation> observations;
 
 
     /**
      * An observation is represented as an array of 3 floats, (x, y, z) (the robot position in the space)
      */
-    public MultiVisionSources(ArrayList<Observation> observations) {
+    public MultiVisionSources(List<Observation> observations) {
         this.observations = observations;
     }
 
