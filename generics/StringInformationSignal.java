@@ -14,7 +14,6 @@ public class StringInformationSignal implements InformationSigna<String> {
     public String getTheLatestValue() {
         if (stringsArr.getLast() == null) {
             System.out.println("This arr is empty");
-            return null;
         }
         return stringsArr.getLast();
     }

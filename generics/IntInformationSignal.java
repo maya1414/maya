@@ -14,7 +14,6 @@ public class IntInformationSignal implements InformationSigna<Integer> {
     public Integer getTheLatestValue() {
         if (intArr.getLast() == null) {
             System.out.println("This arr is empty");
-            return null;
         }
         return intArr.getLast();
     }

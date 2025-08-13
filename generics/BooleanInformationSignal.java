@@ -14,7 +14,6 @@ public class BooleanInformationSignal implements InformationSigna<Boolean> {
     public Boolean getTheLatestValue() {
         if (booleanArr.getLast() == null) {
             System.out.println("This arr is empty");
-            return null;
         }
         return booleanArr.getLast();
     }
