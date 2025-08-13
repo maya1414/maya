@@ -3,31 +3,31 @@ package lambda;
 import java.util.ArrayList;
 
 public class TaskManager {
-    private ArrayList<Task> tasks;
+    private final ArrayList<Task> tasks;
 
-    public TaskManager(){
+    public TaskManager() {
         tasks = new ArrayList<>();
     }
 
-    public void addTask(Task task){
+    public void addTask(Task task) {
         tasks.add(task);
     }
 
-    public void printTasksByFilter(TaskFilter taskFilter){
-        for (Task task: tasks){
-            if (taskFilter.check(task)){
+    public void printTasksByFilter(TaskFilter taskFilter) {
+        for (Task task : tasks) {
+            if (taskFilter.check(task)) {
                 System.out.println(task.name);
             }
         }
     }
-    
-    public void deleteTasksByFilter(TaskFilter taskFilter){
+
+    public void deleteTasksByFilter(TaskFilter taskFilter) {
         tasks.removeIf(task -> taskFilter.check(task));
     }
 
     public void changeImportant(TaskFilter filter, int delta) {
-        for (Task task: tasks){
-            if (filter.check(task)){
+        for (Task task : tasks) {
+            if (filter.check(task)) {
                 task.important += delta;
             }
         }
